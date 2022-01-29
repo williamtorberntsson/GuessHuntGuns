@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/GuessHuntGuns/static/css/main.073c9b0a.css",
-    "main.js": "/GuessHuntGuns/static/js/main.7e2b9dca.js",
+    "main.css": "/GuessHuntGuns/static/css/main.34aac2f3.css",
+    "main.js": "/GuessHuntGuns/static/js/main.e7cc9cf2.js",
     "static/js/787.0ddb0a2d.chunk.js": "/GuessHuntGuns/static/js/787.0ddb0a2d.chunk.js",
-    "static/media/logo.svg": "/GuessHuntGuns/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/GuessHuntGuns/index.html",
-    "main.073c9b0a.css.map": "/GuessHuntGuns/static/css/main.073c9b0a.css.map",
-    "main.7e2b9dca.js.map": "/GuessHuntGuns/static/js/main.7e2b9dca.js.map",
+    "main.34aac2f3.css.map": "/GuessHuntGuns/static/css/main.34aac2f3.css.map",
+    "main.e7cc9cf2.js.map": "/GuessHuntGuns/static/js/main.e7cc9cf2.js.map",
     "787.0ddb0a2d.chunk.js.map": "/GuessHuntGuns/static/js/787.0ddb0a2d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.7e2b9dca.js"
+    "static/css/main.34aac2f3.css",
+    "static/js/main.e7cc9cf2.js"
   ]
 }
