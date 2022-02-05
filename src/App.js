@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Guns from ".//Guns"
 
 function App() {
-  const path = "https://raw.githubusercontent.com/williamtorberntsson/GuessHuntGuns/master/assets/"
+  const path = "https://raw.githubusercontent.com/williamtorberntsson/GuessHuntGuns/master/public/assets/"
   const pistolsounds = [path + "pistols/BornheimNo3.mp3", path + "pistols/CaldwellConversionPistol.mp3", path + "pistols/LeMatMarkII.mp3", path + "pistols/NagantM1895.mp3", path + "pistols/CaldwellPax.mp3", path + "pistols/ScottfieldModel3.mp3"]
   const riflesounds = [path + "rifles/BerthierMle1892.mp3", path + "rifles/Lebel1886.mp3", path + "rifles/MartiniHenryIC1.mp3", path + "rifles/Mosin-NagantM1891.mp3", path + "rifles/Mosin-NagantM1891Avtomat.mp3", path + "rifles/SparksLRR.mp3", path + "rifles/Springfield1866.mp3", path + "rifles/Vetterli71Karabiner.mp3", path + "rifles/WinfieldM1873.mp3"]
   const shotgunsounds = [path + "shotguns/CaldwellRival78.mp3", path + "shotguns/Crown&KingAuto-5.mp3", path + "shotguns/Romero77.mp3", path + "shotguns/Specter1882.mp3", path + "shotguns/Winfield1887Terminus.mp3"]
@@ -29,19 +29,20 @@ function App() {
     if (selectedGuns.shotguns) gunscategoriesinguess.push("shotguns")
     if (selectedGuns.specials) gunscategoriesinguess.push("specials")
 
-    if (!gunscategoriesinguess) {
-      return null
+    if (gunscategoriesinguess.length == 0) {
+      setResults("You need to select a category!")
+      return 0
+    } else {
+      const randomcategory = gunscategoriesinguess[getRandomInt(gunscategoriesinguess.length)]
+
+      const randomgunsoundfromcategory = allgunsounds[randomcategory][getRandomInt(allgunsounds[randomcategory].length)]
+      const currentgun = randomgunsoundfromcategory.split(path).pop().split("/").pop().split(".")[0]
+
+      setCurrentgun(currentgun)
+
+      let audio = new Audio(randomgunsoundfromcategory)
+      audio.play()
     }
-    const randomcategory = gunscategoriesinguess[getRandomInt(gunscategoriesinguess.length)]
-
-    const randomgunsoundfromcategory = allgunsounds[randomcategory][getRandomInt(allgunsounds[randomcategory].length)]
-    const currentgun = randomgunsoundfromcategory.split(path).pop().split("/").pop().split(".")[0]
-
-    setCurrentgun(currentgun)
-
-    let audio = new Audio(randomgunsoundfromcategory)
-    audio.play()
-
 
     function getRandomInt(max) {
       return Math.floor(Math.random() * max);
@@ -49,7 +50,7 @@ function App() {
   }
 
   const checkguess = (guess) => {
-    if(guess == currentgun) {
+    if (guess == currentgun) {
       setResults(`You guesed right! It was ${currentgun}`)
     }
     else {
@@ -71,11 +72,11 @@ function App() {
           </div>
           <div className="guessguns">
             <div className="playsound">
-              <p>Guess</p>
-              <button onClick={() => playSound()}>Spela ljud</button>
+              <p>Random gun sound</p>
+              <button onClick={() => playSound()}>Play sound</button>
             </div>
             <div className="selectgun">
-              <p>Select gun</p>
+              <p>Guess gun</p>
               <Guns enable={selectedGuns.pistols} func={checkguess} gunslistsounds={pistolsounds}></Guns>
               <Guns enable={selectedGuns.rifles} func={checkguess} gunslistsounds={riflesounds}></Guns>
               <Guns enable={selectedGuns.shotguns} func={checkguess} gunslistsounds={shotgunsounds}></Guns>
