@@ -19,3 +19,29 @@
 .playsound {
   align-self: center;
 }
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.selectcategories{
+  margin-bottom: 50px;
+}
+
+
+.selectcategories span{
+  margin: 15px
+}
+
+.selectcategories input{
+  margin-left: 15px;
+  transform: scale(2);
+}
+
+.guessguns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
