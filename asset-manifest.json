@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GuessHuntGuns/static/css/main.0f4bb69f.css",
-    "main.js": "/GuessHuntGuns/static/js/main.d4b03d0f.js",
+    "main.js": "/GuessHuntGuns/static/js/main.b71f79d3.js",
     "static/js/787.0ddb0a2d.chunk.js": "/GuessHuntGuns/static/js/787.0ddb0a2d.chunk.js",
     "index.html": "/GuessHuntGuns/index.html",
     "main.0f4bb69f.css.map": "/GuessHuntGuns/static/css/main.0f4bb69f.css.map",
-    "main.d4b03d0f.js.map": "/GuessHuntGuns/static/js/main.d4b03d0f.js.map",
+    "main.b71f79d3.js.map": "/GuessHuntGuns/static/js/main.b71f79d3.js.map",
     "787.0ddb0a2d.chunk.js.map": "/GuessHuntGuns/static/js/787.0ddb0a2d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0f4bb69f.css",
-    "static/js/main.d4b03d0f.js"
+    "static/js/main.b71f79d3.js"
   ]
 }
