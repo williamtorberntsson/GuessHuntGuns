@@ -66,7 +66,7 @@ function App() {
 
   const checkguess = (guess) => {
     if (guess == currentgun) {
-      setResults(`You guesed right! It was ${currentgun}`)
+      setResults(`You guessed right! It was ${currentgun}`)
     }
     else {
       setResults(`You guessed wrong! Right answer was ${currentgun}!`)
