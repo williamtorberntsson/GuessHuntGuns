@@ -14,6 +14,7 @@ function App() {
   const [results, setResults] = useState("You haven't guessed yet!")
   const [selectedGuns, setSelectedGuns] = useState("")
   const [currentgun, setCurrentgun] = useState("")
+  const [currentSound, setCurrentSound] = useState("")
 
   const handleChangeCheckbox = (evt) => {
     const checked = evt.target.checked;
@@ -22,7 +23,7 @@ function App() {
     });
   }
 
-  function playSound() {
+  function playSound(samesound) {
     const gunscategoriesinguess = []
     if (selectedGuns.pistols) gunscategoriesinguess.push("pistols")
     if (selectedGuns.rifles) gunscategoriesinguess.push("rifles")
@@ -33,10 +34,24 @@ function App() {
       setResults("You need to select a category!")
       return 0
     } else {
+
+      if(samesound) {
+        if(currentSound.length != 0) {
+          let audio = new Audio(currentSound)
+          audio.play()
+          return
+        } else if (currentSound.length == 0) {
+          setResults("You need to play a sound first!")
+          return
+        }
+      }
+      
       const randomcategory = gunscategoriesinguess[getRandomInt(gunscategoriesinguess.length)]
 
       const randomgunsoundfromcategory = allgunsounds[randomcategory][getRandomInt(allgunsounds[randomcategory].length)]
       const currentgun = randomgunsoundfromcategory.split(path).pop().split("/").pop().split(".")[0]
+
+      setCurrentSound(randomgunsoundfromcategory)
 
       setCurrentgun(currentgun)
 
@@ -73,7 +88,8 @@ function App() {
           <div className="guessguns">
             <div className="playsound">
               <p>Random gun sound</p>
-              <button onClick={() => playSound()}>Play sound</button>
+              <button onClick={() => playSound(false)}>Play new sound</button>
+              <button onClick={() => playSound(true)}>Play same sound</button>
             </div>
             <div className="selectgun">
               <p>Guess gun</p>
